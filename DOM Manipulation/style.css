@@ -24,7 +24,7 @@ html,body{
         width: auto;
         border-radius: 15px;
         padding: 6px;
-        background-color:rgba(122, 122, 122, 0.295);
+        border: 1px solid rgba(122, 122, 122, 0.295);
     }
 
     #content{
@@ -40,21 +40,24 @@ html,body{
             left:10px;
             font-size: 28pt;
             font-weight: bold;
-
+            padding: 4px;
+            border-bottom: 2px solid rgba(122, 122, 122, 0.295);
         }
-
-        li{
-
-            font-size: 20pt;
-
-        }
-
         ul{
             position: absolute;
-            top:60px;
+            top:70px;
             left: 10px;
             margin:0px;
         }
+
+            li{
+
+                font-size: 20pt;
+                padding: 2px
+
+            }
+
+
 
 
 
