@@ -1,4 +1,9 @@
-// JavaScript DataTypes:
+// Variables:
+    var temp;
+    let temp1;
+    const temp2;
+
+// DataTypes:
 
     var Int= 1 //Integer;
 
@@ -7,7 +12,7 @@
     var Bool1 = true ; //Bollean
     var Bool0 = flase;
 
-    var Und ; //When there is nothing to return undefined is returned
+    var Und ; //When there is nothing to return undefined is returned.
 
     var N = null; //No value;
 
@@ -19,8 +24,27 @@
     };           // Object
 
 
-// JavaScript DataStructures :
+// Data Structures :
 
     var arr = [2,"Vijit",true,null];
 
     // Array is a object but with keys as indices[0,len-1]
+
+
+
+
+// Compariisons:
+    // ===
+    // !==
+    // >=
+    // <=
+    // >
+    // <
+
+
+// Conditions:
+    if (condition) {
+        
+    } else {
+        
+    }
