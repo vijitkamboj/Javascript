@@ -1,7 +1,8 @@
 // Variables:
     var temp;
-    let temp1;
-    const temp2;
+
+    let temp1;     //ES6  -- lets us create local scopes in conditional statements also.
+    const temp2;   // ES6
 
 // DataTypes:
 
