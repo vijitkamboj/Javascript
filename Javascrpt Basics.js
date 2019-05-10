@@ -2,7 +2,7 @@
     var temp;
 
     let temp1;     //ES6  -- lets us create local scopes in conditional statements also.
-    const temp2;   // ES6 -- temp2 will always have same value.
+    const temp2;   // ES6 -- temp2 will always have same value or referenced memory address cannot be changed.
 
 // DataTypes:
 
