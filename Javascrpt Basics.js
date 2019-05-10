@@ -48,3 +48,37 @@
     } else {
         
     }
+
+// Functions:
+    function Func(a,b){
+        return(a+b);
+    }
+
+    var Func2 = function(a,b){
+        return(a+b)
+    }
+
+// Loops:
+    for (var i=0;i<5;i++){
+        console.log("Yeah!!");
+
+    }
+
+    var i=0;
+    while(i<6){
+        console.log("Yeah!!");
+        i++;
+    }
+
+    var arr = [1,2,3,4,5];
+    arr.forEach(function(i){
+        console.log(i);
+    })
+
+    // >>>
+    // 1
+    // 2
+    // 3
+    // 4
+    // 5
+
