@@ -93,7 +93,7 @@
 
 // Functions:
     function Func(a,b){
-        return(a+b);
+        return(a+b);                 
     }
 
     var Func2 = function(a,b){
@@ -124,9 +124,30 @@
                 extern();
                 //  >>> 10
 
+    // Currying:
+            const add = () => a+b;
+            //  OR 
 
+            const curriedAdd = (a) => (b) => a+b;
 
+            //  Here curriedAdd is function which takes parameter a and returns another function with takes parameter b which retruns a+b
 
+            // Evaluating 4+5;
+            curriedAdd(4)(5);
+            
+            //  Advanteages -- Creating custom functions:
+                curriedAdd4 = curriedAdd(4) // returns a function (b) => 4 + b;
+                curriedAd4(5) -- // retruns 4+5
+    
+    // Compose :
+            const compose = (f,g) => (a) => f(g(a));
+                        // OR
+            
+            const sum = (num) => num+1;
+            const comp1 = compose(sum,sum);    // compose (sum,sum) returns a function (num) => (num+1)+1 
+            comp1(5); // retruns (5+1)+1 = 7 
+    
+ 
 // -----------------------------------------------------------------------------
 
 
