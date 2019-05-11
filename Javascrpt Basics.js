@@ -3,6 +3,7 @@
 
     let temp1;     //ES6  -- lets us create local scopes in conditional statements also.
     const temp2;   // ES6 -- temp2 will always have same value or referenced memory address cannot be changed and can't be referenced again.
+    debugger // Used to debug 
 
 // -----------------------------------------------------------------------------
 
@@ -21,34 +22,45 @@
 
     var N = null; //No value;
 
-    var Obj = {  
-        a:500,
-        b:"Vijit",
-        c:true,
-        d:null
-    };           // Object
+    // Object
+        var Obj = {  
+            a:500,
+            b:"Vijit",
+            c:true,
+            d:null
+        };      
+            // Accessing Properties:
+                var val = Obj.a;
+                val = Obj[a];
 
-        //Destructuring:
-            const{a,b,c} = Obj;
-        //Dynamic Aloocation of object keys:
-            const name = "Vijit";
-            obj={
-                [name] : "Vijit",
-                [1+2] : "3",
-            };
-        
-        // this keyword - it represents the parent scope of whatever objects it is part of:
-            const Obj1 ={
-                a: () => console.log(this)
-            }
-            
-            Obj1.a()  // >>> window       reason - Line 141
 
-            const Obj1 ={
-                a: function() {console.log(this)}
-            }
+            //Destructuring:
+                const{a,b,c} = Obj;
+            //Dynamic Aloocation of object keys:
+                const name = "Vijit";
+                obj={
+                    [name] : "Vijit",
+                    [1+2] : "3",
+                };
             
-            Obj1.a() // >>> {a:f} -- object
+            // this keyword - it represents the parent scope of whatever objects it is part of:
+                const Obj1 ={
+                    a: () => console.log(this)
+                }
+                
+                Obj1.a()  // >>> window       reason - Line 141
+
+                const Obj1 ={
+                    a: function() {console.log(this)}
+                }
+                
+                Obj1.a() // >>> {a:f} -- object
+
+
+            // some extra methods:
+                Object.keys(Obj);      // retruns list of keys
+                Object.values(Obj);    // retruns list of vaues
+                Object.entries(Obj);   // retruns nested list of list of key value pair   --- [[key0,value0],[key1,value1]]
             
 
 // -----------------------------------------------------------------------------
@@ -78,6 +90,8 @@
             arr1 = arr.reduce((accumulator,i) => {
                 return accumulator +i
             } , 0  )
+    // includes();                membership check
+            const c = arr.includes(2)      // stores true in c
             
 
 
@@ -88,7 +102,7 @@
 
 
 // Compariisons:
-    // ===
+    // ===    use this rather than == to avoid type coercion
     // !==
     // >=
     // <=
@@ -106,22 +120,60 @@
     } else {
         
     };
-// Switch:
+    // Switch:
 
-    switch (key) {
-        case value:
-            
-            break;
-    
-        default:
-            break;
-    };
+        switch (key) {
+            case value:
+                
+                break;
+        
+            default:
+                break;
+        };
 
-//Ternary:
-    // <condi>? statementIfCondTrue : statementElse
+    //Ternary:
+        // <condi>? statementIfCondTrue : statementElse
 
 
 // -----------------------------------------------------------------------------
+
+
+// Loops:
+    for (var i=0;i<5;i++){
+        console.log("Yeah!!");
+
+    }
+
+    var i=0;
+    while(i<6){
+        console.log("Yeah!!");
+        i++;
+    }
+
+    var arr = [1,2,3,4,5];
+    arr.forEach(function(i){
+        console.log(i);
+    })
+
+    for (i of arr){         // i- -value      Iterating
+        console.log(i);
+    }
+
+    // >>>
+    // 1
+    // 2
+    // 3
+    // 4
+    // 5
+
+    const Obj5 ={
+        a,b,c
+    };
+    for (i in Obj5){             // i -keys   Enumerating
+        console.log(i);
+    }
+
+//------------------------------------------------------------------------------
 
 
 // Functions:
@@ -150,7 +202,8 @@
 
 
 
-    // Default Parameters in ES6
+    // Default Parameters in ES6 
+    // last parameter can have a trailing comma. (a,b,c,d,) in ES8
 
     
     //  Closures :
@@ -196,30 +249,41 @@
  
 // -----------------------------------------------------------------------------
 
+//  Instantiation OR Classes :
+        class Player{
+            constructor(name , type){
+                this.name = name;
+                this.type = type;
+            }
+            method(){
+                console.log(`Hey My name is ${this.name} and I play ${this.type}`);
+            }
+        }
 
+        // Inheritance:
+        
+        class Wizard extends Player{
+            constructor(name,type,powers) {
+                super(name,type)
+                this.powers = powers;
+                
+            }
+            introduce(){
+                console.log(`Hey My Name is ${this.name} and I play ${this.type} with ${this.powers} powers`);
+            }
 
+        }
 
-// Loops:
-    for (var i=0;i<5;i++){
-        console.log("Yeah!!");
+        // Instance Definition :
 
-    }
+        const player1 = new Wizard("vijit","Football","Right");
+        const player2 = new Wizard("Nikhil","Basketball","none")
 
-    var i=0;
-    while(i<6){
-        console.log("Yeah!!");
-        i++;
-    }
+//------------------------------------------------------------------------------
 
-    var arr = [1,2,3,4,5];
-    arr.forEach(function(i){
-        console.log(i);
-    })
+// Use of "this" :
 
-    // >>>
-    // 1
-    // 2
-    // 3
-    // 4
-    // 5
-
+// By default, “this” refers to global object which is global in case of NodeJS and window object in case of browser
+// When a method is called as a property of object, then “this” refers to the parent object
+// When a function is called with “new” operator then “this” refers to the newly created instance as in classes.
+// When a function is called using call and apply method then “this” refers to the value passed as first argument of call or apply method.
