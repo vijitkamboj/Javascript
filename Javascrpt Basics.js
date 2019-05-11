@@ -9,6 +9,8 @@
     var Int= 1 //Integer;
 
     var Str = "Vijit" //String;
+        //template strings;
+            const NewStr = `My name is ${Str}`
 
     var Bool1 = true ; //Bollean
     var Bool0 = flase;
@@ -24,7 +26,15 @@
         d:null
     };           // Object
 
-
+        //Destructuring:
+            const{a,b,c} = Obj;
+        //Dynamic Aloocation of object keys:
+            const name = "Vijit";
+            obj={
+                [name] : "Vijit",
+                [1+2] : "3",
+            };
+        
 // Data Structures :
 
     var arr = [2,"Vijit",true,null];
@@ -48,7 +58,20 @@
         
     } else {
         
-    }
+    };
+
+    switch (key) {
+        case value:
+            
+            break;
+    
+        default:
+            break;
+    };
+
+    //Ternary:
+        // <condi>? statementIfCondTrue : statementElse
+
 
 // Functions:
     function Func(a,b){
@@ -58,6 +81,7 @@
     var Func2 = function(a,b){
         return(a+b)
     }
+    // Default Parameters in ES6
 
 // Loops:
     for (var i=0;i<5;i++){
