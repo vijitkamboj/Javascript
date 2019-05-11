@@ -2,7 +2,9 @@
     var temp;
 
     let temp1;     //ES6  -- lets us create local scopes in conditional statements also.
-    const temp2;   // ES6 -- temp2 will always have same value or referenced memory address cannot be changed.
+    const temp2;   // ES6 -- temp2 will always have same value or referenced memory address cannot be changed and can't be referenced again.
+
+// -----------------------------------------------------------------------------
 
 // DataTypes:
 
@@ -34,12 +36,20 @@
                 [name] : "Vijit",
                 [1+2] : "3",
             };
-        
+
+            
+
+// -----------------------------------------------------------------------------
+
 // Data Structures :
 
     var arr = [2,"Vijit",true,null];
 
     // Array is a object but with keys as indices[0,len-1]
+
+
+
+// -----------------------------------------------------------------------------
 
 
 
@@ -53,12 +63,17 @@
     // <
 
 
+
+// -----------------------------------------------------------------------------
+
+
 // Conditions:
     if (condition) {
         
     } else {
         
     };
+// Switch:
 
     switch (key) {
         case value:
@@ -69,8 +84,11 @@
             break;
     };
 
-    //Ternary:
-        // <condi>? statementIfCondTrue : statementElse
+//Ternary:
+    // <condi>? statementIfCondTrue : statementElse
+
+
+// -----------------------------------------------------------------------------
 
 
 // Functions:
@@ -81,7 +99,38 @@
     var Func2 = function(a,b){
         return(a+b)
     }
+    // Arrow Functions ES6:
+        const func3 = (a,b) => {
+            return(a+b)
+        }
+        // For only return:
+            const func4 = (a,b) => a+b;
+
     // Default Parameters in ES6
+
+    
+    //  Closures :
+        //  Function ran,executed ; Never going to run again but it is going to remember that there are refences to those variables so Child scope always ahs access to parent scope . 
+        // It is never going to run as variable are const and const can not be referenced again.
+            const parent = () =>{
+                    const a=10;
+                    const child = () => {
+                        console.log(a);;
+                    }
+                return(func1());
+            }
+                
+                const extern = parent();
+                extern();
+                //  >>> 10
+
+
+
+
+// -----------------------------------------------------------------------------
+
+
+
 
 // Loops:
     for (var i=0;i<5;i++){
