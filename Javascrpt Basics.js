@@ -15,7 +15,7 @@
             const NewStr = `My name is ${Str}`
 
     var Bool1 = true ; //Bollean
-    var Bool0 = flase;
+    var Bool0 = false;
 
     var Und ; //When there is nothing to return undefined is returned.
 
@@ -92,19 +92,20 @@
 
 
 // Functions:
-    function Func(a,b){
-        return(a+b);                 
-    }
+    // Declaring Functions:
+            function Func(a,b){
+                return(a+b);                 
+            }
 
-    var Func2 = function(a,b){
-        return(a+b)
-    }
-    // Arrow Functions ES6:
-        const func3 = (a,b) => {
-            return(a+b)
-        }
-        // For only return:
-            const func4 = (a,b) => a+b;
+            var Func2 = function(a,b){
+                return(a+b)
+            }
+            // Arrow Functions ES6:
+                const func3 = (a,b) => {
+                    return(a+b)
+                }
+                // For only return:
+                    const func4 = (a,b) => a+b;
 
     // Default Parameters in ES6
 
@@ -141,11 +142,13 @@
     
     // Compose :
             const compose = (f,g) => (a) => f(g(a));
-                        // OR
-            
+                    
             const sum = (num) => num+1;
             const comp1 = compose(sum,sum);    // compose (sum,sum) returns a function (num) => (num+1)+1 
             comp1(5); // retruns (5+1)+1 = 7 
+
+
+    // Avoid Side effects and have functional Purity.
     
  
 // -----------------------------------------------------------------------------
