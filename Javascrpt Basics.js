@@ -36,8 +36,19 @@
                 [name] : "Vijit",
                 [1+2] : "3",
             };
-        //
+        
+        // this keyword - it represents the parent scope of whatever objects it is part of:
+            const Obj1 ={
+                a: () => console.log(this);
+            }
+            
+            Obj1.a()  // >>> window       reason - Line 141
 
+            const Obj1 ={
+                a: function() {console.log(this)};
+            }
+            
+            Obj1.a() // >>> {a:f} -- object
             
 
 // -----------------------------------------------------------------------------
@@ -130,6 +141,12 @@
                 
                 // For single parameter and just retrun:
                     const func5 = a => a**2;
+                
+                // When to use arrow function:
+                    //Arrow functions don't have their own this or arguments binding. Instead, those identifiers are resolved in the lexical scope like any other variable. That means that inside an arrow function, this and arguments refer to the values of this and arguments in the environment the arrow function is defined in (i.e. "outside" the arrow function)
+                    //  Arrow functions and function declarations / expressions are not equivalent and cannot be replaced blindly.If the function you want to replace does not use this, arguments and is not called with new, then arrow function can be used.
+
+
 
 
     // Default Parameters in ES6
