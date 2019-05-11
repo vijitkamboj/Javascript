@@ -39,13 +39,13 @@
         
         // this keyword - it represents the parent scope of whatever objects it is part of:
             const Obj1 ={
-                a: () => console.log(this);
+                a: () => console.log(this)
             }
             
             Obj1.a()  // >>> window       reason - Line 141
 
             const Obj1 ={
-                a: function() {console.log(this)};
+                a: function() {console.log(this)}
             }
             
             Obj1.a() // >>> {a:f} -- object
@@ -62,6 +62,7 @@
 
     // Looping over elements of array:
             arr.forEach((i) => {
+                console.log(i);
                 // any operation on i
             });
     // map,filter,reduce:
