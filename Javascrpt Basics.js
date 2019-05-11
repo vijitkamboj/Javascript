@@ -36,6 +36,7 @@
                 [name] : "Vijit",
                 [1+2] : "3",
             };
+        //
 
             
 
@@ -43,9 +44,29 @@
 
 // Data Structures :
 
-    var arr = [2,"Vijit",true,null];
+    const arr = [2,"Vijit",true,null];
+    var arr1 ;
 
     // Array is a object but with keys as indices[0,len-1]
+
+    // Looping over elements of array:
+            arr.forEach((i) => {
+                // any operation on i
+            });
+    // map,filter,reduce:
+            arr1 = arr.map((i) => {                      // always has to return
+                return(i**2)
+            });
+
+
+            arr1 = arr.filter( i => {
+                return i>5                             // only those element are added to arr1 for which function returns true;          
+            } );
+
+            arr1 = arr.reduce((accumulator,i) => {
+                return accumulator +i
+            } , 0  )
+            
 
 
 
@@ -106,6 +127,10 @@
                 }
                 // For only return:
                     const func4 = (a,b) => a+b;
+                
+                // For single parameter and just retrun:
+                    const func5 = a => a**2;
+
 
     // Default Parameters in ES6
 
