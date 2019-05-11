@@ -9,26 +9,26 @@
 
 // DataTypes:
 
-    var Int= 1 //Integer;
+    var Int = 1 //Integer;
 
     var Str = "Vijit" //String;
-        //template strings;
-            const NewStr = `My name is ${Str}`
+    //template strings;
+    const NewStr = `My name is ${Str}`
 
-    var Bool1 = true ; //Bollean
+    var Bool1 = true; //Bollean
     var Bool0 = false;
 
-    var Und ; //When there is nothing to return undefined is returned.
+    var Und; //When there is nothing to return undefined is returned.
 
     var N = null; //No value;
 
     // Object
-        var Obj = {  
-            a:500,
-            b:"Vijit",
-            c:true,
-            d:null
-        };      
+        var Obj = {
+            a: 500,
+            b: "Vijit",
+            c: true,
+            d: null
+        };
             // Accessing Properties:
                 var val = Obj.a;
                 val = Obj[a];
@@ -58,9 +58,9 @@
 
 
             // some extra methods:
-                Object.keys(Obj);      // retruns list of keys
-                Object.values(Obj);    // retruns list of vaues
-                Object.entries(Obj);   // retruns nested list of list of key value pair   --- [[key0,value0],[key1,value1]]
+                Object.keys(Obj); // retruns list of keys
+                Object.values(Obj); // retruns list of vaues
+                Object.entries(Obj); // retruns nested list of list of key value pair   --- [[key0,value0],[key1,value1]]
             
 
 // -----------------------------------------------------------------------------
