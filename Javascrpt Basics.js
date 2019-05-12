@@ -290,6 +290,31 @@
 
 
 // ----------------------------------------------------------------------------
+
+// Modules:
+
+        //  1. CommonJS + Browserify :
+            // module.exports = function add(a,b) {return(a+b)};       in js1.js
+            // var add = require("./add")
+
+            // 2. ES6 + Webpack :
+
+                // export const add = (a,b) => a+b;
+                // export default function(a,b) {return (a+b)};
+
+
+                // import {add} from './add';
+                // import add from './add'
+
+
+
+
+
+        // BOTH OF THESE CREATE BUNDLE OF MODULES OR A SINGLE MODULE 
+
+
+
+// ----------------------------------------------------------------------------
  
 // How JavaScript Works :
         // What is a program?
