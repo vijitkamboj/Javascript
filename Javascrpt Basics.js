@@ -48,7 +48,7 @@
                     a: () => console.log(this)
                 }
                 
-                Obj1.a()  // >>> window       reason - Line 141
+                Obj1.a()  // >>> window       reason - Line 198
 
                 const Obj1 ={
                     a: function() {console.log(this)}
@@ -155,7 +155,7 @@
         console.log(i);
     })
 
-    for (i of arr){         // i- -value      Iterating
+    for (i of arr){         // i- -value      Iterating always on List,String
         console.log(i);
     }
 
@@ -169,7 +169,7 @@
     const Obj5 ={
         a,b,c
     };
-    for (i in Obj5){             // i -keys   Enumerating
+    for (i in Obj5){             // i -keys   Enumerating always on objects
         console.log(i);
     }
 
@@ -274,7 +274,7 @@
 
         }
 
-        // Instance Definition :
+        // Instance Declaration :
 
         const player1 = new Wizard("vijit","Football","Right");
         const player2 = new Wizard("Nikhil","Basketball","none")
@@ -287,3 +287,46 @@
 // When a method is called as a property of object, then “this” refers to the parent object
 // When a function is called with “new” operator then “this” refers to the newly created instance as in classes.
 // When a function is called using call and apply method then “this” refers to the value passed as first argument of call or apply method.
+
+
+// ----------------------------------------------------------------------------
+ 
+// How JavaScript Works :
+        // What is a program?
+            // -Allocate memory
+            // -Parse and Execute
+        
+        // Javascript Engine :
+            // Consist of:
+                //  - Memory Heap  => memory aloocatiion      --Avoid creating too many global variables.
+                // - Call Stack => Read and execute scripts 
+        
+        // Javascript is a single-threaded language that can be non-blocking 
+            // It has only on call stack 
+
+            // Stack Overflow:
+                const foo = () => foo();     // Fills up the call stack
+
+            // Single statement is executed at a time line by line - each line has to wait untill all lines above to it in call stack have executed.  -- This type of behaviour is called Synchronous Behaviour.
+            // Solution is Asynchronous Programming -- using timeout():
+
+                console.log(1);
+                setTimeout(( ) => console.log(2) , 2000)      // It is executed  after 2000 milliseconds .
+                console.log(3);
+
+            // running code on single-threaded is easy as it avoid deadlocks 
+
+
+        // JavaScript Run-Time Enviroment:
+
+            // Javascript - Call Stack , Memory Heap
+
+            // Web APIs - DOM  ,AJAX(XMLHttpRequest)  ,Timeout
+
+            // CallBack Queue  
+
+            // Event Loop -- onClick ,onLoad ,onDone
+        
+                //  Whenever a Browser encounter setTimeout()  , it starts a timer , after timeout it pushes the command in setTimeout() to CallBack Queue.
+                //  After that the Event Loop check if the call stack is empty . If nothing is running on JS engine , It checks the CallBack Queue
+                //  and moves the statement in it to CallStack
