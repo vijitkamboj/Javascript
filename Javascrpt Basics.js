@@ -27,8 +27,21 @@
             a: 500,
             b: "Vijit",
             c: true,
-            d: null
+            d: null,
+            e:(a) => a**2,      
         };
+
+            //Note :
+                // Above we can see that key are justified as variable but it is not true, actually these are strings .
+
+                const a = {
+                    b : () => 9,
+                }
+                
+                console.log(Object.keys(a)); /// ['b']
+
+                // This type of behaviour is opted so that to increase simplicity.
+
             // Accessing Properties:
                 var val = Obj.a;
                 val = Obj[a];
