@@ -1,3 +1,6 @@
+var _ = require('lodash');  
+var list = [1,2,3,4,5]
+console.log(_.without(list,3));
 var container = document.querySelector("#container");
 var content = document.querySelector("#content");
 var header = document.querySelector("header");
